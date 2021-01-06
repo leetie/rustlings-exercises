@@ -2,8 +2,6 @@
 // Make me compile without changing line 13!
 // Execute `rustlings hint move_semantics2` for hints :)
 
-// I AM NOT DONE
-
 fn main() {
     let mut vec0 = Vec::new(); // change to mut here, because we will be passing it into fill_vec as a mutable reference to change in place yet retain ownership
 
