@@ -8,14 +8,18 @@
 // which appends "Bar" to any object
 // implementing this trait.
 
-// I AM NOT DONE
-
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
 impl AppendBar for String {
     //Add your code here
+    fn append_bar(self) -> Self {
+        // "Self" being the String type
+        let mut plus_bar = self.clone();
+        plus_bar.push_str("Bar");
+        plus_bar.to_string()
+    }
 }
 
 fn main() {
