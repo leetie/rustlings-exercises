@@ -10,13 +10,18 @@
 // No boiler plate code this time,
 // you can do this!
 
-// I AM NOT DONE
-
 trait AppendBar {
-    fn append_bar(self) -> Self;
+    fn append_bar(&mut self) -> Self;
 }
 
-//TODO: Add your code here
+// kind of a hacky solution here; chose to change the function signature to allow for modifying self in place, function simply pushes String "Bar" onto self and returns self.
+// NEVERMIND, the $ rustlings hint traits2 suggests 'mutating the incoming string vector' so I think I'm good...
+impl AppendBar for Vec<String> {
+    fn append_bar(&mut self) -> Self {
+        self.push(String::from("Bar"));
+        self.to_vec()
+    }
+}
 
 #[cfg(test)]
 mod tests {
